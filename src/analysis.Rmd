@@ -1,0 +1,488 @@
+---
+title: "Fair Speech Analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+usePackage <- function(p) 
+{
+  if (!is.element(p, installed.packages()[,1]))
+    install.packages(p, dep = TRUE)
+  require(p, character.only = TRUE)
+}
+usePackage("MatchIt")
+usePackage("dplyr")
+usePackage("ggplot2")
+usePackage("gridExtra")
+usePackage("fastDummies")
+usePackage("stargazer")
+usePackage("MASS")
+usePackage("reshape2")
+usePackage("tidyverse")
+usePackage("stargazer")
+```
+
+```{r imports, include=FALSE}
+voc_wer <- read.csv('../input/VOC_WER.csv', header=TRUE)
+coraal_wer <- read.csv('../output/CORAAL_WER.csv', header=TRUE)
+common_cols <- intersect(colnames(voc_wer), colnames(coraal_wer))
+reg_base <-rbind(
+  subset(voc_wer, select = common_cols), 
+  subset(coraal_wer, select = common_cols)
+  )
+```
+
+## Interview data overview
+There are `r length(unique(reg_base[reg_base$race_ethnicity != 'White',]$basefile))` interviews with black speakers (from CORAAL), and `r length(unique(reg_base[reg_base$race_ethnicity == 'White',]$basefile))` interviews with white speakers (from VOC).  These audio snippets total `r round(sum(reg_base$duration)/3600, 2)` hours, pre-matching.
+
+```{r covars, include=FALSE}
+# Get covariate dummies
+reg_base$black_flag <- ifelse(reg_base$race_ethnicity == 'White', 0, 1)
+reg_base$female_flag <- ifelse(reg_base$gender %in% c('female', 'Female'), 1, 0)
+reg_base <- reg_base[c('segment_filename', 'basefile', 'black_flag', 'age', 
+                       'female_flag', 'source', 'duration', 'wordcount',
+                        'clean_google_wer', 'clean_ibm_wer', 'clean_amazon_wer', 
+                        'clean_msft_wer', 'clean_apple_wer')]
+reg_base$log_duration <- log(reg_base$duration)
+
+# Make age bins
+min_age <- 25
+max_age <- 95
+age_buckets <- 10
+age_labels <- min_age+age_buckets*(0:ceiling((max_age-min_age+1)/age_buckets))
+age_bins <- cut(reg_base$age, breaks = c(0, seq(min_age, max_age, age_buckets), Inf), 
+                labels=age_labels)
+reg_base$age_bin <- age_labels[age_bins]
+reg_base <- fastDummies::dummy_cols(reg_base, select_columns = 'age_bin')
+
+# Make duration bins
+duration_labels <- 4.999+5*(0:ceiling((50-5+1)/5))
+duration_bins <- cut(reg_base$duration, breaks = c(0, seq(4.999, 50, 5), Inf), 
+                     labels=duration_labels)
+reg_base$duration_bin <- duration_labels[duration_bins]
+```
+
+## Propensity score matching
+```{r match, warning = FALSE}
+# Matching algorithm
+set.seed(100)
+mod_match <- matchit(black_flag ~ age_bin_35 + age_bin_45 + 
+                       age_bin_55 + age_bin_65 + age_bin_75 + age_bin_85 + age_bin_95 +
+                       age + female_flag + log_duration, 
+                     method = "nearest", distance = 'logit', 
+                     caliper = 0.001, data = reg_base)
+
+dta_m <- match.data(mod_match)
+matched_wer <- dta_m[,1:13]
+write.csv(matched_wer, '../output/Matched_WER.csv', row.names = FALSE)
+```
+
+The resulting matching yields `r dim(dta_m)[1]/2` audio snippets from `r length(unique(dta_m[dta_m$black_flag == 1,]$basefile))` black speakers, and `r dim(dta_m)[1]/2` audio snippets from `r length(unique(dta_m[dta_m$black_flag == 0,]$basefile))` white speakers. These `r dim(dta_m)[1]` snippets, corresponding to `r round(sum(dta_m$duration)/3600, 2)` total hours of audio, are used for all ensuing analyses.  Of these snippets, `r 100*round(nrow(dta_m[dta_m$female_flag == 0,]) / nrow(dta_m), 2)`% have male speakers, average snippet duration is `r round(mean(dta_m$duration), 0)` seconds, and average speaker age is `r round(mean(dta_m$age), 0)` years.
+
+## Confirming covariate balance
+```{r covar_balance, include = FALSE, warning = FALSE}
+# Plot covariates before matching
+covariate_plots <- function(reg_stack, ylab_name, xlab_list){
+  
+  # Age
+  reg_stack_age_black <- reg_stack %>% group_by(black_flag, age_bin) %>% summarise(age_black_count = n())
+  reg_stack_black <- reg_stack %>% group_by(black_flag) %>% summarise(black_count = n())
+  reg_stack_get_shares <- merge(reg_stack_age_black, reg_stack_black, by = 'black_flag')
+  reg_stack_get_shares$share <- reg_stack_get_shares$age_black_count / reg_stack_get_shares$black_count
+  reg_stack_get_shares$race_factor = factor(reg_stack_get_shares$black_flag, levels=c('1', '0'), labels = c('Black', 'White'))
+  pre_age <- ggplot(reg_stack_get_shares, aes(x=age_bin, y=share, color = race_factor, group = race_factor)) + 
+    geom_point(aes(fill = race_factor, colour = race_factor), pch=21, size = 2)+
+    scale_fill_manual(values=c("#F8766D", "white")) +
+    geom_line() +
+    ylim(0.02, 0.28) +
+    labs(y=ylab_name, x=xlab_list[1])+theme(text = element_text(size=20), 
+                                            panel.background=element_blank(),
+                                            panel.border = element_rect(colour = "black", fill=NA, size=1))
+  
+  # Duration
+  reg_stack_dur_black <- reg_stack %>% group_by(black_flag, duration_bin) %>% summarise(dur_black_count = n())
+  reg_stack_black <- reg_stack %>% group_by(black_flag) %>% summarise(black_count = n())
+  reg_stack_get_shares <- merge(reg_stack_dur_black, reg_stack_black, by = 'black_flag')
+  reg_stack_get_shares$share <- reg_stack_get_shares$dur_black_count / reg_stack_get_shares$black_count
+  reg_stack_get_shares$race_factor = factor(reg_stack_get_shares$black_flag, levels=c('1', '0'), labels = c('Black', 'White'))
+  pre_duration <- ggplot(reg_stack_get_shares, aes(x=duration_bin, y=share, color = race_factor, group = race_factor)) + 
+    geom_point(aes(fill = race_factor, colour = race_factor), pch=21, size = 2)+
+    scale_fill_manual(values=c("#F8766D", "white")) +
+    geom_line() +
+    ylim(0.02, 0.42) +
+    labs(y=NULL, x=xlab_list[2], color = NULL, fill = NULL)+theme(text = element_text(size=20),
+                                                                  panel.background=element_blank(),
+                                                                  panel.border = element_rect(colour = "black", fill=NA, size=1))
+  
+  # Gender
+  race_gender_table <- table(reg_stack$black_flag, reg_stack$female_flag)
+  total_black <- race_gender_table[2] + race_gender_table[4]
+  total_white <- race_gender_table[1] + race_gender_table[3]
+  white_male <- c('Male', 1.0*race_gender_table[1]/total_white, "White")
+  black_male <- c('Male', 1.0*race_gender_table[2]/total_black, "Black")
+  white_female <- c('Female', 1.0*race_gender_table[3]/total_white, "White")
+  black_female <- c('Female', 1.0*race_gender_table[4]/total_black, "Black")
+  gender_plot_tab <- as.data.frame(rbind(white_male, black_male, white_female, black_female),
+                                   stringsAsFactors=FALSE)
+  pre_gender <- ggplot(gender_plot_tab, aes(x=V1, y=as.double(V2), color = V3, group = V3)) + 
+    geom_point(aes(fill = V3, colour = V3), pch=21, size = 2)+
+    scale_fill_manual(values=c("#F8766D", "white")) +
+    geom_line() +
+    ylim(0.32,0.68) +
+    labs(y=NULL, x=xlab_list[3])+theme(text = element_text(size=20),
+                                       panel.background=element_blank(),
+                                       panel.border = element_rect(colour = "black", fill=NA, size=1))
+  
+  # Arrange grid
+  pre_matching_grid <- grid.arrange(pre_age + theme(legend.position = "none"), 
+                                    pre_gender + theme(legend.position = "none"), 
+                                    pre_duration + theme(legend.position = c(0.7, 0.7)), 
+                                    ncol=3, widths = c(1, 1, 1))
+  
+  #return(pre_matching_grid)
+}
+
+pre_matching_grid <- covariate_plots(reg_base, "Pre-Matching Density", c(NULL, NULL, NULL))
+post_matching_grid <- covariate_plots(dta_m, "Post-Matching Density",
+                                      c("Age", "Duration (seconds)", "Gender"))
+
+
+```
+
+```{r covar_plot, echo = FALSE, fig.height = 7, fig.width = 12}
+# Display plots
+covar_balance <- grid.arrange(pre_matching_grid, post_matching_grid, nrow=2)
+
+# Save covariate pre- and post-matching as Figure S1
+g <- arrangeGrob(pre_matching_grid, post_matching_grid, nrow=2)
+ggsave(file="../output/plots/covar_balance.pdf", g)
+```
+
+## Average Word Error Rate by ASR Service
+
+```{r avg_wer, include = FALSE}
+# Calculate average WER by ASR
+wer_dot_avg <- dta_m %>% 
+  group_by(black_flag) %>% 
+  summarise(apple_wer = mean(clean_apple_wer, na.rm=T),
+            ibm_wer = mean(clean_ibm_wer, na.rm=T),
+            google_wer = mean(clean_google_wer, na.rm=T),
+            amazon_wer = mean(clean_amazon_wer, na.rm=T),
+            msft_wer = mean(clean_msft_wer, na.rm=T)) %>%
+  mutate(stat = "Mean")
+
+wer_dot_sd <- dta_m %>% 
+  group_by(black_flag) %>% 
+  summarise(apple_wer = sd(clean_apple_wer)/sqrt(n()), 
+            ibm_wer = sd(clean_ibm_wer)/sqrt(n()),
+            google_wer = sd(clean_google_wer)/sqrt(n()),
+            amazon_wer = sd(clean_amazon_wer)/sqrt(n()),
+            msft_wer = sd(clean_msft_wer)/sqrt(n())) %>%
+  mutate(stat = "SE")
+
+wer_dot_plot <- rbind(wer_dot_avg, wer_dot_sd)
+wer_dot_base <- melt(as.data.frame(wer_dot_plot), id.vars=c('black_flag', 'stat'))
+
+# Determine ASR-specific average and s.e. of WERs for black and white speakers for paper text
+wer_dot_base <- reshape(wer_dot_base, timevar = 'stat', 
+                        idvar = c('black_flag', 'variable'), direction = 'wide')
+max_se_value <- max(wer_dot_base$value.SE) # Maximum SE is ~ 0.005
+```
+
+```{r overall_WER, include=FALSE}
+# Calculate overall stats on WER (across ASRs) for paper text
+dta_wer <- dta_m %>% rowwise() %>% mutate(avg_wer = mean(c(clean_google_wer,
+                                                           clean_apple_wer,
+                                                           clean_amazon_wer,
+                                                           clean_ibm_wer,
+                                                           clean_msft_wer)))
+
+all_wer_avg <- ungroup(dta_wer) %>% 
+  group_by(black_flag) %>% 
+  summarise(all_wer_mean = mean(avg_wer, na.rm=T),
+            all_wer_se = sd(avg_wer)/sqrt(n()))
+
+gender_wer_avg <- ungroup(dta_wer) %>% 
+  group_by(black_flag, female_flag) %>% 
+  summarise(all_wer_mean = mean(avg_wer, na.rm=T),
+            all_wer_se = sd(avg_wer)/sqrt(n()))
+
+# Clean names for ASRs
+wer_dot_base$asr_factor = factor(wer_dot_base$variable, levels=c('apple_wer',
+                                                                 'ibm_wer',
+                                                                 'google_wer',
+                                                                 'amazon_wer',
+                                                                 'msft_wer'
+), 
+labels = c('Apple', 'IBM', 'Google', 'Amazon', 'Microsoft'))
+
+wer_dot_base$speaker_factor = factor(wer_dot_base$black_flag, levels=c('1','0'),
+                                     labels = c('Black', 'White'))
+
+# Calculate average WER stats across all AAVE and White speakers (horizontal lines in Figure 1)
+avg_white_WER <- wer_dot_base %>% filter(black_flag == 0) %>% summarise (mean = mean(value.Mean))
+avg_black_WER <- wer_dot_base %>% filter(black_flag == 1) %>% summarise (mean = mean(value.Mean))
+```
+
+Across all ASRs, the average WER for transcriptions of black speakers is `r round(avg_black_WER,2)`, nearly double the WER for white speakers `r round(avg_white_WER,2)`.  The maximum standard error across all ASRs and both races was `r round(max_se_value, 3)`.
+
+```{r dotplot, echo = FALSE}
+print(wer_dot_base)
+
+# Save dot plot of average WER by ASR as Figure 1
+dotplot <- ggplot(wer_dot_base, aes(asr_factor, value.Mean)) + 
+  geom_point(aes(colour = speaker_factor, fill = speaker_factor), size=7)+
+  scale_color_manual(values=c('red', 'blue'))+
+  annotate("text", x = 5.2, y = 0.37, label = "Black", color = 'red', size = 7) + ##F8766D
+  annotate("text", x = 5.2, y = 0.21, label = "White", color = 'blue', size = 7) + ##00BFC4
+  geom_hline(yintercept=avg_black_WER$mean, linetype="dashed", color = "red") + 
+  geom_hline(yintercept=avg_white_WER$mean, linetype="dashed", color = "blue") +
+  labs(y="Average WER \n", x=NULL, color = NULL, shape = NULL)+
+  theme_bw() +
+  theme(axis.text = element_text(size=20, color = 'black'), 
+        axis.title=element_text(size=20, face="bold"), legend.position = "none",
+        aspect.ratio = 0.5)+
+  ylim(0.023,0.5)
+dotplot
+
+ggsave(file="../output/plots/dotplot.pdf", height = 5, width = 9, dotplot)
+```
+
+## Complementary CDF of Word Error Rates
+
+```{r wer_dist, include=FALSE}
+# Distribution of WER by race
+dta_wer <- dta_m %>% rowwise() %>% mutate(avg_wer = mean(c(clean_google_wer,
+                                                           clean_apple_wer,
+                                                           clean_amazon_wer,
+                                                           clean_ibm_wer,
+                                                           clean_msft_wer)))
+
+dta_wer$speaker_factor = factor(dta_wer$black_flag, levels=c('1','0'),
+                                labels = c('AAVE', 'White'))
+
+# Calculate CCDF with 1 average across ASRs for AAVE and White
+p  <- ggplot(dta_wer, aes(avg_wer, color = speaker_factor)) + stat_ecdf()
+pg <- ggplot_build(p)$data[[1]]
+pg$speaker_factor = factor(pg$colour, levels=c('#F8766D','#00BFC4'),
+                           labels = c('Black', 'White'))
+
+# Find share of not-understandable (WER > 0.5) snippets
+black_pg <- pg[pg$speaker_factor == 'Black',]
+white_pg <- pg[pg$speaker_factor == 'White',]
+black_wer_over_50 <- 1-black_pg[round(black_pg$x,3) == 0.500,]$y
+white_wer_over_50 <- 1-white_pg[round(white_pg$x,2) == 0.50,]$y
+```
+
+Of the ASR transcriptions for white speakers' snippets, only `r 100*round(white_wer_over_50,3)`% of them had incomprensible WERs. Meanwhile, of transcriptions for black speakers, nearly ten times as many had incomprehensible WERs (`r 100*round(black_wer_over_50[1],3)`% with high WER).
+
+```{r ccdf, echo=FALSE}
+# Plot CCDF
+ccdf <- ggplot(pg, aes(x = x, y = 1-y, color = speaker_factor)) + geom_step() +
+  scale_color_manual(values=c('red', 'blue'))+
+  labs(x = "\n Average WER", y = "\n") +
+  annotate("text", x = 0.54, y = 0.3, label = "Black", color = 'red', size = 7) + #F8766D
+  annotate("text", x = 0.13, y = 0.3, label = "White", color = 'blue', size = 7) + ##00BFC4
+  theme_bw() + theme(axis.text = element_text(size=20, color = 'black'), 
+                     axis.title=element_text(size=20, face="bold"),
+                     legend.position = "none",
+                     plot.margin = margin(10,10,10,0)) + #legend.position = c(0.9, 0.8)) +
+  scale_x_continuous(expand = c(0, 0), limits=c(0.001,1.03)) + scale_y_continuous(expand = c(0, 0), labels = scales::percent)
+  
+ccdf
+
+# Export CCDF as Figure 2
+ggsave(file="../output/plots/ccdf.pdf", height = 5, width = 9, ccdf)
+```
+
+## WERs by location of interview
+
+```{r locations, include = FALSE, warning = FALSE}
+# Count number of speakers per location
+sources <- unique(dta_m$source)
+for (s in sources){
+  num_speakers <- length(unique(dta_m[dta_m$source == s,]$basefile))
+  print(paste0(s,": ", num_speakers, " speakers"))
+}
+
+# Location-specific box plots aggregated across ASR
+dta_wer <- dta_m %>% rowwise() %>% mutate(avg_wer = mean(c(clean_google_wer,
+                                                           clean_apple_wer,
+                                                           clean_amazon_wer,
+                                                           clean_ibm_wer,
+                                                           clean_msft_wer)))
+
+dta_wer$loc_factor = factor(dta_wer$source, levels=c('PRV','DCB', 'ROC', 'SAC', 'HUM'),
+                            labels = c('Princeville', 'DC', 'Rochester', 'Sacramento', 'Humboldt'))
+```
+
+```{r boxplot, echo = FALSE, warning = FALSE}
+location_boxplot <- ggplot(dta_wer, aes(x=loc_factor, y=avg_wer)) +
+  geom_boxplot(outlier.size=0, coef=0, outlier.shape=NA)+
+  labs(x = NULL, y = "Average WER \n")+
+  theme_bw() + theme(axis.text.y = element_text(size=20, colour = 'black'), 
+                     axis.text.x = element_text(size=15, colour = 'black'),
+                     axis.title=element_text(size=20, face="bold"),
+                     aspect.ratio = 0.7)+
+  annotate("rect", xmin = 0, xmax = 3.5, ymin = -Inf, ymax = Inf, fill = 'gray85', alpha = 0.3)+
+  scale_y_continuous(expand = c(0, 0), limits=c(0,0.7))
+
+location_boxplot
+
+# Export as Figure 3
+ggsave(file="../output/plots/boxplot.pdf", height = 5, width = 8, location_boxplot)
+```
+
+## Dialect Density Measure correlates with WER
+
+```{r ddm, include=FALSE}
+ddm <- read.csv('../input/DDM.csv', header=TRUE)
+
+# generate total DDM and average WER for each snippet
+complete_data <- ddm %>%
+  mutate(
+    ddm = (phon_count + gram_count) / wordcount,
+    avg_wer = (clean_google_wer + clean_ibm_wer + clean_amazon_wer + clean_msft_wer + clean_apple_wer)/5,
+    source = recode_factor(source, 'ROC'='Rochester', 'DCB'='DC', 'PRV'='Princeville')
+  )
+
+# compute summary stats
+summary_stats <- complete_data %>%
+  summarize(
+    n = n(),
+    avg_wordcount = mean(wordcount),
+    avg_phon_count = mean(phon_count),
+    avg_gram_count = mean(gram_count),
+    avg_ddm = mean(ddm)
+  )
+
+# compute average DDM by location
+avg_ddm_by_location <- complete_data %>%
+  group_by(source) %>%
+  summarize(
+    n = n(),
+    avg = mean(ddm),
+    se = sd(ddm)/sqrt(n),
+    lower = avg - 2*se,
+    upper = avg + 2*se 
+  )
+
+# compute average DDM by gender
+avg_ddm_by_gender <- complete_data %>%
+  group_by(female_flag) %>%
+  summarize(
+    n = n(),
+    avg = mean(ddm),
+    se = sd(ddm)/sqrt(n),
+    lower = avg - 2*se,
+    upper = avg + 2*se 
+  )
+```
+
+DDM summary:
+```{r, echo = FALSE}
+print(summary_stats)
+```
+
+DDM by group:
+```{r, echo = FALSE}
+print(avg_ddm_by_location)
+print(avg_ddm_by_gender)
+```
+
+```{r ddm_plot, echo = FALSE}
+# plot the results
+p <- ggplot(complete_data, aes(ddm, avg_wer)) + 
+  geom_point(aes(color=source), size = 3) +
+  geom_smooth(method=lm, color='black') +
+  geom_vline(data=avg_ddm_by_location, aes(xintercept=avg, color=source), linetype = 'dashed', size=1.5) +
+  scale_x_continuous(name="\n DDM") + 
+  scale_y_continuous(name="Average WER \n") +
+  theme(
+    legend.position = c(.8, .2),
+    legend.title = element_blank(),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(fill = "transparent"),
+    legend.key = element_rect(fill = "transparent"),
+    axis.text.y = element_text(size=20, colour = 'black'), 
+    axis.text.x = element_text(size=20, colour = 'black'),
+    axis.title=element_text(size=20, face="bold"),
+    aspect.ratio = 0.6)
+p
+ggsave(plot=p, filename='../output/plots/ddm.pdf', width = 8, height=5)
+```
+
+```{r, echo = FALSE}
+# examine relationship between WER and DDM, after adjusting for age, gender, and duration
+model_wer <- lm(avg_wer ~ 1 + I(phon_count/wordcount) + I(gram_count/wordcount) +
+                  age + female_flag + duration, data = complete_data)
+
+summary(model_wer)
+```
+
+## Regressions separated by gender
+```{r, include = FALSE}
+# Ordering for regression outputs
+asr_vars <- c('clean_apple_wer', 'clean_ibm_wer', 'clean_google_wer', 'clean_amazon_wer', 'clean_msft_wer')
+asr_list <- c('Apple', 'IBM', 'Google', 'Amazon', 'Microsoft')
+dta_female <- dta_m[dta_m$female_flag==1,]
+dta_male <- dta_m[dta_m$female_flag==0,]
+
+# Estimating treatment effects -- five separate regressions for ASRs
+ols_basic_covar <- function(input_data, title_str){
+  output_lm <- list()
+  for (i in 1:length(asr_vars)){
+    asr <- asr_vars[[i]]
+    ols_base <- lm(input_data[[asr]] ~ input_data$black_flag + input_data$age +
+                     input_data$log_duration)
+    output_lm[[i]] <- ols_base
+  }
+  stargazer(output_lm[1], output_lm[2], output_lm[3], output_lm[4], output_lm[5],
+            font.size="small",
+            align = TRUE,
+            title=title_str,
+            omit.stat=c("f", "ser"),
+            dep.var.caption = c("ASR WER"),
+            dep.var.labels.include = FALSE,
+            column.labels=asr_list,
+            covariate.labels = c("AAVE Indicator", "Age", 
+                                 "Log Duration"),
+            no.space=TRUE,
+            column.sep.width = "-3pt",
+            digits = 2,
+            digits.extra = 0
+  )
+}
+
+# Generate Table S1
+ols_basic_covar(dta_female, "Effect on WER among Women")
+ols_basic_covar(dta_male, "Effect on WER among Men")
+```
+
+```{r, include = FALSE}
+# Example with Google's ASR for a 45-year-old speaking for 30 seconds
+
+female_google <- lm(dta_female[['clean_google_wer']] ~ dta_female$black_flag + dta_female$age + dta_female$log_duration)
+male_google <- lm(dta_male[['clean_google_wer']] ~ dta_male$black_flag + dta_male$age + dta_male$log_duration)
+
+ex_age <- 45
+ex_dur <- 30
+
+pred_black_woman <- female_google$coefficients[1] + female_google$coefficients[2]*1 + 
+  female_google$coefficients[3]*ex_age + female_google$coefficients[4]*log(ex_dur)
+pred_white_woman <- female_google$coefficients[1] + female_google$coefficients[2]*0 + 
+  female_google$coefficients[3]*ex_age + female_google$coefficients[4]*log(ex_dur)
+pred_black_man <- male_google$coefficients[1] + male_google$coefficients[2]*1 + 
+  male_google$coefficients[3]*ex_age + male_google$coefficients[4]*log(ex_dur)
+pred_white_man <- male_google$coefficients[1] + male_google$coefficients[2]*0 + 
+  male_google$coefficients[3]*ex_age + male_google$coefficients[4]*log(ex_dur)
+```
+
+As an example, for the average 45-year-old speaking for 30 seconds, Google's ASR performs as follows:
+
+* Black man: WER = `r round(pred_black_man,2)`
+* Black woman: WER = `r round(pred_black_woman,2)`
+* White man: WER = `r round(pred_white_man,2)`
+* White woman: WER = `r round(pred_white_woman,2)`

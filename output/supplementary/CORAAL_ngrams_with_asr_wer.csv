@@ -1,0 +1,207 @@
+segment_filename,basefile,age,gender,n,ngram,clean_google_phrase,clean_google_ngram_wer,clean_ibm_phrase,clean_ibm_ngram_wer,clean_amazon_phrase,clean_amazon_ngram_wer,clean_msft_phrase,clean_msft_ngram_wer,clean_apple_phrase,clean_apple_ngram_wer
+DCB_se1_ag2_f_01_1_493519_499002.wav,DCB_se1_ag2_f_01_1,28,Female,5,it was a lot of,it was a lot of,0,it was a lot of,0,it was a lot of,0,it was a lot,0.2,it was a lot of,0
+DCB_se1_ag2_f_01_1_674039_691608.wav,DCB_se1_ag2_f_01_1,28,Female,5,see a lot of people,see a lot of people,0,see a lot of people,0,see a lot of people,0,see a lot of people,0,see a lot of people,0
+DCB_se1_ag2_f_01_1_739387_747606.wav,DCB_se1_ag2_f_01_1,28,Female,5,a lot of people are,,1,a lot of people,0.2,a,0.8,lot people,0.6,,1
+DCB_se1_ag2_f_01_1_940041_965741.wav,DCB_se1_ag2_f_01_1,28,Female,5,and then i went to,and then i went to,0,and then i went to,0,and then i went to,0,and then i went to,0,and i went to,0.2
+DCB_se1_ag2_f_01_1_1058180_1106086.wav,DCB_se1_ag2_f_01_1,28,Female,5,it was just like that,it was just like that,0,it was just like that,0,it was just like that,0,it was just like that,0,it was just like that,0
+DCB_se1_ag2_f_01_1_1451640_1459994.wav,DCB_se1_ag2_f_01_1,28,Female,5,and then we moved to,and then we moved,0.2,to,0.8,and then we,0.4,and then we move to,0.2,and then we moved to,0
+DCB_se1_ag2_f_01_1_2193689_2211074.wav,DCB_se1_ag2_f_01_1,28,Female,5,i dont know but i,i dont know but i,0,but i,0.6,but i,0.6,i dont know but i,0,i,0.8
+DCB_se1_ag2_f_03_1_490492_537551.wav,DCB_se1_ag2_f_03_1,25,Female,5,for a long time and,for a long time and,0,for a long time and,0,for a long time and,0,for a long term and,0.2,for a long time and,0
+DCB_se1_ag2_f_03_1_793833_814674.wav,DCB_se1_ag2_f_03_1,25,Female,5,and now im thinking about,and now im thinking about,0,and now im thinking about,0,and now im thinking about,0,and now im thinking about,0,and now im thinking about,0
+DCB_se1_ag2_f_03_1_1739317_1755838.wav,DCB_se1_ag2_f_03_1,25,Female,5,and my mother was a,and my mother was a,0,was a,0.6,and my mother was,0.2,and my mother was,0.2,and my mother was a,0
+DCB_se1_ag2_f_03_1_3210488_3231844.wav,DCB_se1_ag2_f_03_1,25,Female,5,so i was like i,like i,0.6,like i,0.6,like i,0.6,like i,0.6,so than twelve like i,0.4
+DCB_se1_ag2_f_03_1_3328619_3363654.wav,DCB_se1_ag2_f_03_1,25,Female,5,they have a lot of,they have a lot of,0,they have a lot of,0,they have a lot of,0,they have a lot of,0,they have a lot of,0
+DCB_se1_ag2_f_03_1_3446134_3492326.wav,DCB_se1_ag2_f_03_1,25,Female,5,when i was a kid,when i was a kid,0,when i was a kid,0,when i was a kid,0,when i was a kid,0,when i was a kid,0
+DCB_se1_ag2_f_03_1_3557064_3584318.wav,DCB_se1_ag2_f_03_1,25,Female,5,in high school i was,in high school i was,0,in high school i was,0,in high school i was,0,in high school i was,0,high school i was,0.2
+DCB_se1_ag2_m_01_1_170433_191932.wav,DCB_se1_ag2_m_01_1,27,Male,5,i dont know it was,i dont know it was,0,i dont know it,0.2,i dont know it was,0,i dont know it was,0,it,0.8
+DCB_se1_ag2_m_01_1_397779_423376.wav,DCB_se1_ag2_m_01_1,27,Male,5,i just i dont know,i just i dont know,0,i dont know,0.4,i dont know,0.4,i just i dont know,0,i just dont know,0.2
+DCB_se1_ag2_m_01_1_2904352_2941677.wav,DCB_se1_ag2_m_01_1,27,Male,5,i think it was just,i think it was,0.2,i think it was,0.2,i think i just,0.4,i think it was,0.2,it was,0.6
+DCB_se1_ag2_m_01_1_3172044_3184153.wav,DCB_se1_ag2_m_01_1,27,Male,5,where we used to live,to,0.8,to,0.8,to,0.8,we,0.8,to,0.8
+DCB_se1_ag2_m_03_2_722364_770020.wav,DCB_se1_ag2_m_03_2,24,Male,5,and its like you know,you know,0.6,and its like you know,0,and its like you know,0,and its like you know,0,,inf
+DCB_se1_ag3_f_01_1_946225_953916.wav,DCB_se1_ag3_f_01_1,42,Female,5,that they dont have to,that they dont have to,0,that they dont have to,0,that they dont have,0.2,that they dont have,0.2,that they dont have,0.2
+DCB_se1_ag3_f_01_1_1500765_1511119.wav,DCB_se1_ag3_f_01_1,42,Female,5,were going to have a,were going to have a,0,were going to have,0.2,were going to have,0.2,were going to have a,0,were going to have a,0
+DCB_se1_ag3_f_01_1_2051311_2070524.wav,DCB_se1_ag3_f_01_1,42,Female,5,going to have to take,have to take,0.4,have to take,0.4,going to have to take,0,going to have to take,0,have to take,0.4
+DCB_se1_ag3_f_01_1_2120599_2130636.wav,DCB_se1_ag3_f_01_1,42,Female,5,going to be able to,going to be able to,0,going to be able to,0,going to be,0.4,going to be able to,0,be able to,0.4
+DCB_se1_ag3_f_01_1_2459909_2470782.wav,DCB_se1_ag3_f_01_1,42,Female,5,to take care of you,you,0.8,take care you,0.4,take care you,0.4,take care you,0.4,take care you,0.4
+DCB_se1_ag3_f_01_1_2840359_2849338.wav,DCB_se1_ag3_f_01_1,42,Female,5,going to go back to,going to go back to,0,going to go back to,0,going to go back to,0,going to go back to,0,going to go back to,0
+DCB_se1_ag3_f_01_1_3044658_3059282.wav,DCB_se1_ag3_f_01_1,42,Female,5,youre going to have to,have to,0.6,have to,0.6,have to,0.6,have to,0.6,have to,0.6
+DCB_se1_ag3_f_02_2_751376_756432.wav,DCB_se1_ag3_f_02_2,38,Female,5,a year and a half,a year and a half,0,a year and a half,0,a year and,0.4,a year and a half,0,a year and a half,0
+DCB_se1_ag3_f_03_1_309655_346096.wav,DCB_se1_ag3_f_03_1,34,Female,5,and stuff like that i,and stuff like that i,0,and stuff like that i,0,and stuff like that i,0,and stuff like that i,0,and stuff like that i,0
+DCB_se1_ag3_f_03_1_650860_675278.wav,DCB_se1_ag3_f_03_1,34,Female,5,i guess i dont know,i guess i dont know,0,i guess i dont know,0,i guess i dont know,0,i guess i dont know,0,i guess i dont know,0
+DCB_se1_ag3_f_03_1_828090_851653.wav,DCB_se1_ag3_f_03_1,34,Female,5,and a lot of the,and a lot of the,0,and a lot of the,0,and a lot of the,0,and a lot of the,0,and a lot of the,0
+DCB_se1_ag3_f_03_1_1091246_1117381.wav,DCB_se1_ag3_f_03_1,34,Female,5,i was like okay i,like i,0.6,i was like okay i,0,i was like okay i,0,i was like okay i,0,i wrote a book i,0.6
+DCB_se1_ag3_f_03_1_1154103_1159140.wav,DCB_se1_ag3_f_03_1,34,Female,5,and then you know the,and then you know,0.2,and then you know the,0,and then you know the,0,and then you know,0.2,and then you know the,0
+DCB_se1_ag3_f_03_1_1295573_1343956.wav,DCB_se1_ag3_f_03_1,34,Female,5,but it was still nice,but it was still nice,0,but it was still nice,0,but it was still nice,0,but it was still nice,0,but it was still nice,0
+DCB_se1_ag3_f_03_1_1635913_1650999.wav,DCB_se1_ag3_f_03_1,34,Female,5,able to make it cause,able to make it cause,0,able to make it,0.2,able to make it,0.2,able to make it cause,0,able to make it,0.2
+DCB_se1_ag3_f_03_1_1970579_1978366.wav,DCB_se1_ag3_f_03_1,34,Female,5,you know i try to,you know i try to,0,you know i try to,0,you know try to,0.2,you know i try to,0,try to,0.6
+DCB_se1_ag3_f_03_1_2037024_2077911.wav,DCB_se1_ag3_f_03_1,34,Female,5,and i dont know i,and i dont know i,0,know,0.8,and i dont know i,0,i dont know i,0.2,i,0.8
+DCB_se1_ag3_f_03_1_2037024_2077911.wav,DCB_se1_ag3_f_03_1,34,Female,5,i dont know i think,i dont know i think,0,know,0.8,i dont know i think,0,i dont know i think,0,i,0.8
+DCB_se1_ag3_f_03_1_2674065_2685172.wav,DCB_se1_ag3_f_03_1,34,Female,5,and stuff like that like,and stuff like that like,0,and stuff like that,0.2,and stuff like that,0.2,and stuff like that,0.2,and stuff like that like,0
+DCB_se1_ag3_f_03_1_2910883_2939163.wav,DCB_se1_ag3_f_03_1,34,Female,5,a lot of my friends,a lot of my friends,0,a lot of,0.4,a lot of my friends,0,a lot of my friends,0,a lot of my friends,0
+DCB_se1_ag3_f_03_1_3057053_3062955.wav,DCB_se1_ag3_f_03_1,34,Female,6,i dont think so i think,i dont think so i think,0,i dont think that i think,0.166666667,i dont think so i think,0,i dont think so i think,0,i dont think so i think,0
+DCB_se1_ag3_f_03_1_3456770_3466161.wav,DCB_se1_ag3_f_03_1,34,Female,5,i would say that i,i will say that i,0.2,say that i,0.4,i will say that i,0.2,i would say that i,0,i will say that i,0.2
+DCB_se1_ag3_f_03_1_3563887_3577808.wav,DCB_se1_ag3_f_03_1,34,Female,5,but a lot of people,but a lot of people,0,but a lot of people,0,but a lot of people,0,but a lot of people,0,but a lot of people,0
+DCB_se1_ag3_f_03_1_3605598_3611134.wav,DCB_se1_ag3_f_03_1,34,Female,5,i dont even know what,i dont know what,0.2,i only know what,0.4,i only know what,0.4,i only know what,0.4,i,0.8
+DCB_se1_ag3_m_02_1_198263_235744.wav,DCB_se1_ag3_m_02_1,36,Male,5,or something like that but,or something like that but,0,or something like that but,0,or something like that but,0,or something like that but,0,or something like that but,0
+DCB_se1_ag3_m_02_1_485938_522415.wav,DCB_se1_ag3_m_02_1,36,Male,5,i think a lot of,i think a lot of,0,i think a lot of,0,i think a lot of,0,i think a lot of,0,i,0.8
+DCB_se1_ag3_m_02_1_599406_631651.wav,DCB_se1_ag3_m_02_1,36,Male,5,you know as long as,you know,0.6,you know,0.6,you know,0.6,you know,0.6,you know,0.6
+DCB_se1_ag4_m_01_1_1313175_1360684.wav,DCB_se1_ag4_m_01_1,61,Male,5,all the way up until,the,0.8,the,0.8,the way,0.6,up until,0.6,the fall up until,0.4
+DCB_se1_ag4_m_01_1_1980413_2016134.wav,DCB_se1_ag4_m_01_1,61,Male,6,to go to the grocery store,to go to the grocery store,0,to go to the grocery store,0,to go to the grocery store,0,to go to the grocery store,0,,inf
+DCB_se1_ag4_m_01_1_2019047_2053162.wav,DCB_se1_ag4_m_01_1,61,Male,5,you know we would say,you know we would say,0,you know we would say,0,you know we would say,0,we would say,0.4,you know we,0.4
+DCB_se1_ag4_m_01_1_3191409_3211199.wav,DCB_se1_ag4_m_01_1,61,Male,5,you know what it was,you know what it was,0,you know what it was,0,you know what it was,0,you know what it was,0,you know what it was,0
+DCB_se1_ag4_m_01_1_3232536_3252805.wav,DCB_se1_ag4_m_01_1,61,Male,5,that was that was the,that was that was,0.2,that was that was the,0,that was that was,0.2,that was that was the,0,that was that with the,0.2
+DCB_se1_ag4_m_01_1_3420415_3459379.wav,DCB_se1_ag4_m_01_1,61,Male,5,it used to be a,used to be a,0.2,used to be,0.4,used to be,0.4,it used to be,0.2,,inf
+DCB_se1_ag4_m_02_1_1319145_1368515.wav,DCB_se1_ag4_m_02_1,67,Male,6,its just the way it is,just the way it is,0.166666667,just the way it is,0.166666667,its just a way is,0.333333333,just the way it is,0.166666667,,inf
+DCB_se1_ag4_m_02_1_2513438_2560235.wav,DCB_se1_ag4_m_02_1,67,Male,5,its a nice place to,a nice place to,0.2,a nice place to,0.2,its a nice place to,0,a nice place to,0.2,a nice place to,0.2
+DCB_se2_ag2_f_01_1_307445_341399.wav,DCB_se2_ag2_f_01_1,25,Female,5,a lot of people but,a few but,0.6,a lot of,0.4,a few of,0.6,a few of,0.6,a few of,0.6
+DCB_se2_ag2_f_01_1_510898_520792.wav,DCB_se2_ag2_f_01_1,25,Female,5,when i was growing up,when i was growing up,0,was up,0.6,i was grow up,0.4,when i was growing up,0,i was brought up,0.4
+DCB_se2_ag2_f_01_1_983626_1026102.wav,DCB_se2_ag2_f_01_1,25,Female,5,a lot of people that,a while because people,0.6,that,0.8,a lot of people,0.2,a lot of people,0.2,a bit of,0.6
+DCB_se2_ag2_f_01_1_2235598_2253504.wav,DCB_se2_ag2_f_01_1,25,Female,5,it was just like oh,it was just like,0.2,just,0.8,it was just like oh,0,it was just like oh,0,it was,0.6
+DCB_se2_ag2_f_02_1_67487_81697.wav,DCB_se2_ag2_f_02_1,23,Female,7,and then i went to high school,and then i went to high school,0,and then i went to high school,0,and then i went to high school,0,and then i went to high school,0,and then i went to high school,0
+DCB_se2_ag2_f_02_1_176993_184247.wav,DCB_se2_ag2_f_02_1,23,Female,5,and i cant remember the,and i cant remember the,0,and i cant remember the,0,and i cant remember the,0,and i cant remember the,0,and i cant remember the,0
+DCB_se2_ag2_f_02_1_463274_512953.wav,DCB_se2_ag2_f_02_1,23,Female,5,i went to high school,i went to high school,0,i went to high school,0,i went to high school,0,i went to high school,0,i went to high school,0
+DCB_se2_ag2_f_02_1_688677_725833.wav,DCB_se2_ag2_f_02_1,23,Female,5,and i was like i,and i was like i,0,and i was like i,0,and i was like i,0,and i was like i,0,and i was i,0.2
+DCB_se2_ag2_f_02_1_1078192_1099576.wav,DCB_se2_ag2_f_02_1,23,Female,5,i dont know how it,i dont,0.6,i dont know how it,0,i dont know how,0.2,i dont know how it,0,i dont know how it,0
+DCB_se2_ag2_f_02_1_1466329_1497245.wav,DCB_se2_ag2_f_02_1,23,Female,5,you know were going to,you know were going to,0,you know were going to,0,you know were going,0.2,you know were going to,0,you know were going to,0
+DCB_se2_ag2_f_02_1_1822906_1837787.wav,DCB_se2_ag2_f_02_1,23,Female,5,i guess you could say,i guess you could say,0,i guess you could say,0,i guess you could say,0,i guess you could say,0,i guess you could say,0
+DCB_se2_ag2_f_02_1_1962669_1973983.wav,DCB_se2_ag2_f_02_1,23,Female,5,a lot of issues with,a lot of issues with,0,a lot of issues with,0,a lot of issues with,0,a lot of issues with,0,a lot of issues with,0
+DCB_se2_ag2_f_02_1_2558109_2600473.wav,DCB_se2_ag2_f_02_1,23,Female,5,and i dont know what,and i dont know,0.2,and i dont know what,0,and i dont know what,0,and i dont know what,0,and i dont know,0.2
+DCB_se2_ag2_f_02_1_3492790_3531278.wav,DCB_se2_ag2_f_02_1,23,Female,5,i think its amazing that,i think its amazing that,0,i think its amazing that,0,i think its amazing that,0,i think its amazing that,0,i think its amazing that,0
+DCB_se2_ag2_m_01_1_410589_425368.wav,DCB_se2_ag2_m_01_1,27,Male,5,was kind of you know,was kind of you know,0,was kinda you know,0.4,was kind of you know,0,was kind of you know,0,was cardio you know,0.4
+DCB_se2_ag2_m_01_1_444356_458342.wav,DCB_se2_ag2_m_01_1,27,Male,5,of the people that moved,of people,0.6,of people,0.6,of people,0.6,of people,0.6,of people,0.6
+DCB_se2_ag2_m_01_1_612109_621498.wav,DCB_se2_ag2_m_01_1,27,Male,5,across the st from the,across the st from the,0,across the st from the,0,across the st from the,0,across the st from the,0,the st from the,0.2
+DCB_se2_ag2_m_01_1_785801_817922.wav,DCB_se2_ag2_m_01_1,27,Male,5,or something like that and,or something like that and,0,or something like that and,0,or something like that,0.2,or something like that,0.2,or some like that and,0.2
+DCB_se2_ag2_m_01_1_1191422_1196751.wav,DCB_se2_ag2_m_01_1,27,Male,5,i dont i dont really,i dont,0.6,i dont,0.6,dont,0.8,i dont really,0.4,i dont,0.6
+DCB_se2_ag2_m_01_1_1299147_1307814.wav,DCB_se2_ag2_m_01_1,27,Male,5,so i dont know how,so i dont know,0.2,so i dont know,0.2,so i dont know,0.2,so i dont know,0.2,so i dont know,0.2
+DCB_se2_ag2_m_01_1_1672825_1715786.wav,DCB_se2_ag2_m_01_1,27,Male,5,im not going to say,im not,0.6,im not,0.6,to,0.8,im not going to say,0,im not,0.6
+DCB_se2_ag2_m_01_1_1795357_1833753.wav,DCB_se2_ag2_m_01_1,27,Male,5,i think at the time,at the time,0.4,at the time,0.4,i think,0.6,at the time,0.4,i think,0.6
+DCB_se2_ag2_m_01_1_2024099_2056032.wav,DCB_se2_ag2_m_01_1,27,Male,5,i would say i was,i was saying i was,0.4,say i was,0.4,say i was,0.4,i would say i was,0,i was saying i was,0.4
+DCB_se2_ag2_m_01_1_2320371_2330427.wav,DCB_se2_ag2_m_01_1,27,Male,5,and i dont know why,and i dont know why,0,and i dont know,0.2,and i dont know why,0,and i dont know why,0,and i dont know why,0
+DCB_se2_ag3_f_01_1_859048_878042.wav,DCB_se2_ag3_f_01_1,33,Female,5,its just kind of a,its just kind of a,0,its just kind of a,0,its just kind of a,0,its just kind of a,0,its just kind of a,0
+DCB_se2_ag3_f_02_1_63304_90358.wav,DCB_se2_ag3_f_02_1,31,Female,5,i went to school in,i went to school in,0,i went to school in,0,i went to school,0.2,i went to school in,0,i want to school,0.4
+DCB_se2_ag3_f_02_1_96460_102310.wav,DCB_se2_ag3_f_02_1,31,Female,5,i started my own business,i started my own business,0,i started my own business,0,i started my own business,0,i started my own business,0,i started my own business,0
+DCB_se2_ag3_f_02_1_259228_277839.wav,DCB_se2_ag3_f_02_1,31,Female,5,know its going to be,know its going to be,0,its going to be,0.2,know its going to be,0,know is going to be,0.2,know its going to be,0
+DCB_se2_ag3_f_02_1_420487_428460.wav,DCB_se2_ag3_f_02_1,31,Female,5,and so i kind of,and so i kind of,0,and so i kind of,0,and so i kind of,0,and so i kind of,0,and so i kind,0.2
+DCB_se2_ag3_f_02_1_962767_1001826.wav,DCB_se2_ag3_f_02_1,31,Female,5,we always used to go,we always seem to go,0.2,we always to go,0.2,we always just go,0.4,we all used to go,0.2,we always,0.6
+DCB_se2_ag3_f_02_1_1003415_1031466.wav,DCB_se2_ag3_f_02_1,31,Female,5,but it was it was,but it was it was,0,but it was it was,0,but it was it was,0,but it was it was,0,but it was it was,0
+DCB_se2_ag3_f_02_1_1882276_1929300.wav,DCB_se2_ag3_f_02_1,31,Female,5,i dont know anything about,i dont know anything about,0,i dont know anything about,0,i dont know anything about,0,i dont know anything about,0,i dont know anything about,0
+DCB_se2_ag3_f_02_1_1882276_1929300.wav,DCB_se2_ag3_f_02_1,31,Female,5,dont know anything about that,dont know anything about that,0,dont know anything about that,0,dont know anything about that,0,dont know anything about that,0,dont know anything about that,0
+DCB_se2_ag3_f_02_1_2577738_2610144.wav,DCB_se2_ag3_f_02_1,31,Female,5,there are a lot of,there are a lot of,0,there are a lot of,0,a lot of,0.4,,inf,there are a lot of,0
+DCB_se2_ag3_f_02_1_2912073_2947145.wav,DCB_se2_ag3_f_02_1,31,Female,5,to be able to do,to be able to do,0,be able to do,0.2,be able to do,0.2,to be able to do,0,be able to do,0.2
+DCB_se2_ag3_m_01_1_1042696_1065082.wav,DCB_se2_ag3_m_01_1,35,Male,5,and all of that and,and all of that and,0,and all that and,0.2,all of that and,0.2,and all of that and,0,and all that and,0.2
+DCB_se2_ag3_m_01_1_1301439_1332899.wav,DCB_se2_ag3_m_01_1,35,Male,5,i was going to be,was going to,0.4,i was,0.6,i was going to,0.2,i was going to be,0,,inf
+DCB_se2_ag3_m_01_1_1403432_1432834.wav,DCB_se2_ag3_m_01_1,35,Male,5,blah blah blah blah blah,,1,,1,,1,blah blah blah,0.4,,1
+DCB_se2_ag3_m_01_1_1403432_1432834.wav,DCB_se2_ag3_m_01_1,35,Male,5,you know thats kind of,you know thats kind of,0,you know thats kind of,0,you know thats kind of,0,you know thats kind of,0,thats kind of,0.4
+DCB_se2_ag3_m_01_1_1559024_1579079.wav,DCB_se2_ag3_m_01_1,35,Male,5,i dont need to be,need to be,0.4,need to,0.6,i will need to be,0.2,i dont need to be,0,need to be,0.4
+DCB_se2_ag3_m_01_1_2107975_2139789.wav,DCB_se2_ag3_m_01_1,35,Male,5,trying to figure out how,trying to figure out how,0,trying to figure out how,0,trying to figure out how,0,trying to figure out how,0,trying to figure out how,0
+DCB_se2_ag3_m_01_1_2147729_2158455.wav,DCB_se2_ag3_m_01_1,35,Male,5,thats a big part of,thats a big part,0.2,thats a big part,0.2,thats a big part,0.2,thats a big part,0.2,thats a big part,0.2
+DCB_se2_ag3_m_01_1_3530230_3568013.wav,DCB_se2_ag3_m_01_1,35,Male,6,and so it was it was,it was,0.666666667,so was it was,0.333333333,it was it was,0.333333333,so was it was,0.333333333,it was,0.666666667
+DCB_se2_ag3_m_01_1_3771921_3819886.wav,DCB_se2_ag3_m_01_1,35,Male,5,and i think that was,that was,0.6,that was,0.6,i think that was,0.2,that was,0.6,that was,0.6
+DCB_se2_ag3_m_01_1_4269454_4289893.wav,DCB_se2_ag3_m_01_1,35,Male,5,i dont know why i,i dont know why i,0,i,0.8,i dont know why i,0,i dont know why i,0,i,0.8
+DCB_se2_ag3_m_02_1_2989608_3033203.wav,DCB_se2_ag3_m_02_1,31,Male,5,i dont know i dont,i dont,0.6,i dont,0.6,i dont,0.6,i dont,0.6,i,0.8
+DCB_se2_ag3_m_02_1_3201664_3239804.wav,DCB_se2_ag3_m_02_1,31,Male,5,was kind of a a,was kind of a,0.2,was kind of a,0.2,was kind of,0.4,was kind of,0.4,was kind of a,0.2
+DCB_se2_ag4_f_02_1_257957_300971.wav,DCB_se2_ag4_f_02_1,51,Female,5,to college so it was,to college so it was,0,to college so it was,0,to college so it was,0,to college so it was,0,college so it was,0.2
+DCB_se2_ag4_f_02_1_1187807_1201033.wav,DCB_se2_ag4_f_02_1,51,Female,5,so you know i i,so i,0.6,so you know i i,0,so you know i,0.2,so you know i,0.2,so i,0.6
+DCB_se2_ag4_f_02_1_1542868_1568283.wav,DCB_se2_ag4_f_02_1,51,Female,5,it was it was like,it was it was like,0,it was it was like,0,it was it was like,0,it was it was like,0,it was it was like,0
+DCB_se2_ag4_f_02_1_2536678_2560068.wav,DCB_se2_ag4_f_02_1,51,Female,5,so thats what i did,so thats what i did,0,thats what i did,0.2,thats what i did,0.2,thats what i did,0.2,thats what i did,0.2
+DCB_se2_ag4_f_02_1_3710029_3732592.wav,DCB_se2_ag4_f_02_1,51,Female,5,this weekend and we were,this weekend and we were,0,this weekend we were,0.2,this weekend we were,0.2,this weekend and we were,0,this week and we were,0.2
+DCB_se2_ag4_m_01_1_518347_538216.wav,DCB_se2_ag4_m_01_1,59,Male,5,but once you cross that,you do that,0.6,you do that,0.6,you grow that,0.6,once you cross that,0.2,you do that,0.6
+DCB_se2_ag4_m_01_1_795133_800680.wav,DCB_se2_ag4_m_01_1,59,Male,5,i think the the the,i think the,0.4,i think with the the,0.2,i think,0.6,i think the,0.4,i begged the,0.6
+DCB_se2_ag4_m_01_1_1893964_1916260.wav,DCB_se2_ag4_m_01_1,59,Male,6,if you look at it its,if you look at it,0.166666667,if you look at it,0.166666667,if you look at it,0.166666667,if you look at it,0.166666667,if you look at it,0.166666667
+DCB_se2_ag4_m_01_1_2683980_2704238.wav,DCB_se2_ag4_m_01_1,59,Male,5,but its not its not,but its not,0.4,but its not,0.4,but its not its not,0,but its not its not,0,not,0.8
+DCB_se2_ag4_m_01_1_2683980_2704238.wav,DCB_se2_ag4_m_01_1,59,Male,5,now i dont have to,i was going to,0.6,now i dont want to,0.2,now i dont want to,0.2,now i dont have to,0,to,0.8
+DCB_se2_ag4_m_01_1_3198796_3227022.wav,DCB_se2_ag4_m_01_1,59,Male,5,its its a its a,a,0.8,its its,0.6,its,0.8,its its,0.6,a,0.8
+DCB_se2_ag4_m_01_1_3198796_3227022.wav,DCB_se2_ag4_m_01_1,59,Male,6,its a its a its a,a,0.833333333,its its,0.666666667,its,0.833333333,its its,0.666666667,a,0.833333333
+DCB_se3_ag3_f_01_1_176756_215122.wav,DCB_se3_ag3_f_01_1,32,Female,5,and then he went back,and then he went back,0,and then he went back,0,and then he went back,0,and then he went back,0,and then he went back,0
+DCB_se3_ag3_f_01_1_554346_573162.wav,DCB_se3_ag3_f_01_1,32,Female,5,i mean i feel like,i mean i feel like,0,i mean i feel like,0,i mean i feel like,0,i mean i feel like,0,i mean i feel like,0
+DCB_se3_ag3_f_01_1_675426_691677.wav,DCB_se3_ag3_f_01_1,32,Female,5,a lot of the kids,a lot of the kids,0,a lot of the kids,0,the kids,0.6,a lot of the kids,0,a lot of the kids,0
+DCB_se3_ag3_f_01_1_741366_765575.wav,DCB_se3_ag3_f_01_1,32,Female,6,i dont know if they were,i dont know if they were,0,i dont know if they were,0,i dont know if they were,0,i dont know if they were,0,i dont know if they were,0
+DCB_se3_ag3_f_01_1_1128589_1156499.wav,DCB_se3_ag3_f_01_1,32,Female,5,my dad grew up in,my dad grew up in,0,my dad grew up in,0,my dad grew up in,0,my dad grew up in,0,my dad grew up in,0
+DCB_se3_ag3_f_01_1_1319274_1355782.wav,DCB_se3_ag3_f_01_1,32,Female,5,a lot of kids who,a lot of kids who,0,a lot of kids who,0,a lot of kids who,0,a lot of kids who,0,a lot of kids who,0
+DCB_se3_ag3_f_01_1_1319274_1355782.wav,DCB_se3_ag3_f_01_1,32,Female,6,there were a lot of kids,there are a lot of kids,0.166666667,there are a lot of kids,0.166666667,there were a lot of kids,0,there were a lot of kids,0,there were a lot of kids,0
+DCB_se3_ag3_f_01_1_1361382_1390865.wav,DCB_se3_ag3_f_01_1,32,Female,5,and a lot of them,and a lot of them,0,and a lot of them,0,and a lot of them,0,and a lot of them,0,and a lot of them,0
+DCB_se3_ag3_f_01_1_1361382_1390865.wav,DCB_se3_ag3_f_01_1,32,Female,6,and then a lot of the,and then a lot of the,0,and then a lot of the,0,and then a lot of the,0,and then a lot of the,0,and then a lot of the,0
+DCB_se3_ag3_f_01_1_1580563_1613202.wav,DCB_se3_ag3_f_01_1,32,Female,5,when i was there but,when i was there but,0,when i was there but,0,when i was there but,0,when i was there but,0,when i was there but,0
+DCB_se3_ag3_f_02_1_463715_506047.wav,DCB_se3_ag3_f_02_1,39,Female,5,any of that stuff i,any of that stuff i,0,any of that stuff i,0,any of that stuff i,0,any of that stuff i,0,any of that stuff i,0
+DCB_se3_ag3_f_02_1_705380_738437.wav,DCB_se3_ag3_f_02_1,39,Female,5,at the end of the,at the end of the,0,at the end of the,0,the end of the,0.2,at the end of the,0,at the end of the,0
+DCB_se3_ag3_f_02_1_1821120_1853777.wav,DCB_se3_ag3_f_02_1,39,Female,5,but at that time i,but i,0.6,but at,0.6,but and thats why i,0.6,but i,0.6,but i,0.6
+DCB_se3_ag3_f_02_1_2610044_2623897.wav,DCB_se3_ag3_f_02_1,39,Female,5,know what youre talking about,know,0.8,,1,know that about,0.6,know that about,0.6,,1
+DCB_se3_ag3_f_02_1_2632973_2651557.wav,DCB_se3_ag3_f_02_1,39,Female,5,i dont know its just,i,0.8,i dont,0.6,i dont know its just,0,i dont know its just,0,i dont know,0.4
+DCB_se3_ag3_f_02_1_2883645_2918424.wav,DCB_se3_ag3_f_02_1,39,Female,5,and at that time i,and i,0.6,and i,0.6,and at that time i,0,and at that time i,0,at that time i,0.2
+DCB_se3_ag3_f_02_1_3300068_3330461.wav,DCB_se3_ag3_f_02_1,39,Female,5,you know some of the,you know some of,0.2,you know some of,0.2,you know some of,0.2,you know,0.6,you know some of,0.2
+DCB_se3_ag3_m_01_1_594393_601974.wav,DCB_se3_ag3_m_01_1,33,Male,5,just like oh my gosh,just like oh my gosh,0,like oh my,0.4,just like oh my gosh,0,just like oh my gosh,0,like oh my gosh,0.2
+DCB_se3_ag3_m_02_1_300623_314188.wav,DCB_se3_ag3_m_02_1,40,Male,5,cause i mean growing up,i mean growing up,0.2,i mean growing up,0.2,i mean growing up,0.2,cause i mean growing up,0,i,0.8
+DCB_se3_ag3_m_02_1_315306_340456.wav,DCB_se3_ag3_m_02_1,40,Male,5,at the same time and,at the same time and,0,the time,0.6,the time,0.6,at the same time and,0,the time,0.6
+DCB_se3_ag3_m_02_1_341632_363626.wav,DCB_se3_ag3_m_02_1,40,Male,6,a lot of things that i,a lot of things that i,0,a lot of things that i,0,a lot of things that i,0,a lot of things that i,0,a lot of things that i,0
+DCB_se3_ag3_m_02_1_1147468_1155101.wav,DCB_se3_ag3_m_02_1,40,Male,5,if i was going to,i was,0.6,i was wanting to,0.4,if i was going to,0,if i was going to,0,i was,0.6
+DCB_se3_ag3_m_02_1_2186468_2199129.wav,DCB_se3_ag3_m_02_1,40,Male,5,that a little bit and,that a little bit and,0,that a little bit and,0,that a little bit and,0,that a little bit,0.2,that a little bit and,0
+DCB_se3_ag3_m_02_1_2849877_2862409.wav,DCB_se3_ag3_m_02_1,40,Male,5,i i like i said,,1,i i guess i,0.4,i like i said,0.2,i like i said,0.2,,1
+DCB_se3_ag4_f_01_1_818352_834740.wav,DCB_se3_ag4_f_01_1,59,Female,8,i thought i was going to be a,i thought i was going to be a,0,i thought i was going to be a,0,i thought it was going to be a,0.125,i thought i was going to be a,0,i thought was going to be a,0.125
+DCB_se3_ag4_f_02_1_993348_1037955.wav,DCB_se3_ag4_f_02_1,54,Female,5,its just you know i,its just you know i,0,its just you know i,0,its just you know i,0,just you know i,0.2,its just you know i,0
+DCB_se3_ag4_f_02_1_3113871_3140701.wav,DCB_se3_ag4_f_02_1,54,Female,5,so it was kind of,so it was kind of,0,so it was kind of,0,so it was kind of,0,so it was kind of,0,so it was kind,0.2
+DCB_se3_ag4_f_02_1_3141572_3178396.wav,DCB_se3_ag4_f_02_1,54,Female,5,a lot of people there,a lot of people there,0,a lot of people there,0,a lot of people there,0,a lot of people there,0,a lot of people there,0
+DCB_se3_ag4_m_01_1_224287_257781.wav,DCB_se3_ag4_m_01_1,60,Male,5,know a lot about this,know a lot about this,0,know a lot about this,0,know a lot about this,0,know a lot about this,0,know a lot about this,0
+DCB_se3_ag4_m_01_1_276083_314757.wav,DCB_se3_ag4_m_01_1,60,Male,5,we had a lot of,we had a lot of,0,we had a lot of,0,we had a lot of,0,we had a lot of,0,a lot of,0.4
+DCB_se3_ag4_m_01_1_498900_534956.wav,DCB_se3_ag4_m_01_1,60,Male,5,like that you know yeah,like that,0.6,like that yeah,0.4,like that,0.6,like that yeah,0.4,like that yeah,0.4
+DCB_se3_ag4_m_01_1_498900_534956.wav,DCB_se3_ag4_m_01_1,60,Male,5,of the things that were,of the,0.6,of the,0.6,of no things that were,0.2,of things that were,0.2,of the things they were,0.2
+DCB_se3_ag4_m_01_1_801091_826985.wav,DCB_se3_ag4_m_01_1,60,Male,5,back in the forties and,back in the forties and,0,back in the forties,0.2,back in the forties and,0,back in the forties and,0,back in the forties and,0
+DCB_se3_ag4_m_01_1_1678403_1707228.wav,DCB_se3_ag4_m_01_1,60,Male,5,all the way to the,all the way to the,0,all the way to the,0,all the way to the,0,all the way to the,0,all the way to the,0
+DCB_se3_ag4_m_02_1_86054_114159.wav,DCB_se3_ag4_m_02_1,66,Male,5,i was i think in,i was i think in,0,i was i think in,0,i wass i think in,0.2,i was i think in,0,i was i think in,0
+DCB_se3_ag4_m_02_3_283347_308607.wav,DCB_se3_ag4_m_02_3,66,Male,5,there was a lot of,there was a lot of,0,there was a lot of,0,there was a lot of,0,there was a lot of,0,there was a lot of,0
+PRV_se0_ag1_f_01_1_979762_986610.wav,PRV_se0_ag1_f_01_1,19,Female,5,and everything but it was,and everything but was,0.2,,1,but,0.8,and everything but,0.4,,1
+PRV_se0_ag1_f_01_1_996314_1002295.wav,PRV_se0_ag1_f_01_1,19,Female,5,but it was just like,but it was just like,0,but it was just like,0,but it was just like,0,,inf,just like,0.6
+PRV_se0_ag1_f_01_1_1198094_1204653.wav,PRV_se0_ag1_f_01_1,19,Female,5,you know a lot of,you know lots of,0.4,you know five of,0.4,you know lots of,0.4,you know lots of,0.4,you know,0.6
+PRV_se0_ag1_f_01_1_1362920_1369559.wav,PRV_se0_ag1_f_01_1,19,Female,5,and she was like we,she was like,0.4,she was like,0.4,she was like,0.4,she was like,0.4,she,0.8
+PRV_se0_ag2_f_02_1_1739988_1767042.wav,PRV_se0_ag2_f_02_1,48,Female,5,have a little bit more,have a little bit more,0,have a little bit more,0,have a little bit more,0,have a little bit more,0,have a little bit more,0
+PRV_se0_ag2_f_02_1_2583201_2591646.wav,PRV_se0_ag2_f_02_1,48,Female,5,you see a lot of,a lot of,0.4,see a lot of,0.2,see a lot of,0.2,see a lot of,0.2,,1
+PRV_se0_ag2_f_02_2_898267_904819.wav,PRV_se0_ag2_f_02_2,48,Female,5,and so i had to,and so i had to,0,and so i had,0.2,and so i,0.4,and so i had,0.2,i had to,0.4
+PRV_se0_ag3_f_02_1_1507840_1518671.wav,PRV_se0_ag3_f_02_1,40,Female,5,get on the bus and,get on the bus and,0,get on the bass and,0.2,get on the bus and,0,get on the bus and,0,get on the bus and,0
+PRV_se0_ag3_f_02_2_1768811_1779062.wav,PRV_se0_ag3_f_02_2,40,Female,5,and then there was a,and then there was a,0,and then there was a,0,and then there was a,0,and then there was a,0,and then there was a,0
+PRV_se0_ag3_f_04_1_1348097_1359131.wav,PRV_se0_ag3_f_04_1,76,Female,5,and i didnt get to,and i didnt get to,0,and,0.8,and i didnt get to,0,and i didnt get to,0,and i didnt get,0.2
+PRV_se0_ag3_f_04_1_1873262_1878732.wav,PRV_se0_ag3_f_04_1,76,Female,5,years older than he is,years,0.8,he is,0.6,years,0.8,years,0.8,,1
+PRV_se0_ag3_f_04_3_356292_363334.wav,PRV_se0_ag3_f_04_3,76,Female,5,when we were growing up,,1,when we,0.6,when we were,0.4,when we were,0.4,when we were,0.4
+PRV_se0_ag3_f_04_3_439474_452032.wav,PRV_se0_ag3_f_04_3,76,Female,6,but i dont know you know,but i dont know you know,0,but i dont know you know,0,but i dont know you know,0,but i dont know you know,0,but i dont know you know,0
+PRV_se0_ag3_m_01_1_158559_167998.wav,PRV_se0_ag3_m_01_1,64,Male,5,as a matter of fact,a lot of,0.6,of,0.8,fact,0.8,matter fact,0.6,of,0.8
+PRV_se0_ag3_m_01_1_572306_584938.wav,PRV_se0_ag3_m_01_1,64,Male,6,you know it was like my,you know it was like my,0,you know is like,0.5,you know like,0.5,,inf,you know,0.666666667
+PRV_se0_ag3_m_01_1_1239328_1249532.wav,PRV_se0_ag3_m_01_1,64,Male,5,but at the same time,but at the same time,0,at the same time,0.2,but at the same time,0,but at the same time,0,but at the same time,0
+PRV_se0_ag3_m_01_1_2032133_2038853.wav,PRV_se0_ag3_m_01_1,64,Male,5,on the side of the,on the side of the,0,on the sad of the,0.2,on the side of the,0,on the side of the,0,on the side of the,0
+PRV_se0_ag3_m_01_2_337858_348258.wav,PRV_se0_ag3_m_01_2,64,Male,5,it was just a a,it was just a a,0,it was just the a,0.2,it was just a,0.2,it was jester a,0.4,it was just in a,0.2
+ROC_se0_ag1_f_01_1_453489_469577.wav,ROC_se0_ag1_f_01_1,26,Female,5,so a lot of the,so a lot of the,0,a lot of the,0.2,so a lot of the,0,so a lot of the,0,so a lot of the,0
+ROC_se0_ag1_f_01_1_731700_748963.wav,ROC_se0_ag1_f_01_1,26,Female,5,was just kind of like,was just kind of like,0,was just kind of like,0,was just kind of like,0,was just kind of like,0,was just kind a like,0.2
+ROC_se0_ag1_f_01_1_2685915_2720794.wav,ROC_se0_ag1_f_01_1,26,Female,6,i feel like a lot of,i feel like a lot of,0,a lot of,0.5,i feel like a lot of,0,i feel like a lot of,0,i feel like a lot of,0
+ROC_se0_ag1_f_01_1_2814366_2829390.wav,ROC_se0_ag1_f_01_1,26,Female,5,dont get a lot of,dont get a lot of,0,dont get a lot of,0,dont get a lot of,0,dont get a lot of,0,dont get a lot of,0
+ROC_se0_ag1_f_02_1_1303195_1334719.wav,ROC_se0_ag1_f_02_1,28,Female,5,you have to have a,you have to have a,0,you have to have a,0,you have to have a,0,you have to have a,0,you have to have a,0
+ROC_se0_ag1_f_02_1_1380090_1429279.wav,ROC_se0_ag1_f_02_1,28,Female,5,you know i dont know,i dont know,0.4,you know i dont know,0,you know,0.6,you know i know,0.2,you know i dont know,0
+ROC_se0_ag1_f_03_1_1713100_1726058.wav,ROC_se0_ag1_f_03_1,28,Female,5,but i feel like its,i feel like,0.4,like its,0.6,but i feel like its,0,but i feel like its,0,like,0.8
+ROC_se0_ag1_f_03_1_1941795_1951809.wav,ROC_se0_ag1_f_03_1,28,Female,5,i feel like its more,i feel like its more,0,i feel like its more,0,i feel like its more,0,i feel like its more,0,i feel like its more,0
+ROC_se0_ag1_f_03_1_2369316_2392482.wav,ROC_se0_ag1_f_03_1,28,Female,5,for me i could take,for me i could take,0,for me i could take,0,for me i could take,0,for me i could take,0,for me i could take,0
+ROC_se0_ag1_f_03_1_2756313_2764994.wav,ROC_se0_ag1_f_03_1,28,Female,6,and i dont know if it,and i dont know if,0.166666667,and i dont know if,0.166666667,and i dont know if,0.166666667,and i dont know if,0.166666667,and i dont know if,0.166666667
+ROC_se0_ag1_m_01_1_949627_982435.wav,ROC_se0_ag1_m_01_1,24,Male,5,wake up in the morning,wake up in the morning,0,wake up in the morning,0,wake up in the morning,0,wake up in the morning,0,wake up in the morning,0
+ROC_se0_ag1_m_01_1_3433072_3455724.wav,ROC_se0_ag1_m_01_1,24,Male,5,here my whole life so,here my whole life so,0,here my whole life so,0,here my whole life so,0,here my whole life so,0,here my whole life so,0
+ROC_se0_ag1_m_02_1_1311807_1327823.wav,ROC_se0_ag1_m_02_1,27,Male,5,im im not going to,im not going to,0.2,im im not going to,0,im im not going to,0,im not going to,0.2,im im not going to,0
+ROC_se0_ag1_m_03_1_45507_57870.wav,ROC_se0_ag1_m_03_1,25,Male,5,for a long long time,for a long long time,0,for a long long time,0,for a long long time,0,for a long long time,0,for a long long time,0
+ROC_se0_ag1_m_03_1_417933_455595.wav,ROC_se0_ag1_m_03_1,25,Male,6,right across the st from my,right across the st from my,0,right across the st from my,0,right across the st from my,0,right across the st from my,0,right across the st from my,0
+ROC_se0_ag1_m_03_1_1312012_1324347.wav,ROC_se0_ag1_m_03_1,25,Male,5,its its almost hard to,its its almost hard to,0,its its almost hard to,0,its its almost hard to,0,its its almost hard to,0,its almost hard to,0.2
+ROC_se0_ag1_m_03_1_1703802_1749300.wav,ROC_se0_ag1_m_03_1,25,Male,5,want to be able to,want to be able to,0,want to be able to,0,want to,0.6,want to be able to,0,want to be able to,0
+ROC_se0_ag2_f_01_1_174923_203269.wav,ROC_se0_ag2_f_01_1,31,Female,5,and i was born in,i was born in,0.2,i was born in,0.2,i was born in,0.2,i grew up in,0.6,i was born in,0.2
+ROC_se0_ag2_f_01_1_4558165_4576078.wav,ROC_se0_ag2_f_01_1,31,Female,5,so a lot of people,a lot of people,0.2,a lot of people,0.2,so a lot of people,0,so a lot of people,0,so loud people,0.6
+ROC_se0_ag2_f_01_1_4558165_4576078.wav,ROC_se0_ag2_f_01_1,31,Female,5,a lot of people from,a lot of people from,0,a lot of people from,0,a lot of people from,0,a lot of people from,0,people from,0.6
+ROC_se0_ag2_f_02_1_69901_96955.wav,ROC_se0_ag2_f_02_1,32,Female,5,we didnt get to go,we didnt get to go,0,we didnt get to go,0,we didnt get to go,0,we didnt get to go,0,we didnt get to go,0
+ROC_se0_ag2_f_02_1_791340_815012.wav,ROC_se0_ag2_f_02_1,32,Female,5,i dont know about that,i dont know about that,0,i dont know,0.4,i dont,0.6,i dont know about that,0,i dont know,0.4
+ROC_se0_ag2_f_02_1_890303_923124.wav,ROC_se0_ag2_f_02_1,32,Female,5,a lot of these people,a lot of these people,0,a lot of these people,0,a lot of these people,0,a lot of these people,0,people,0.8
+ROC_se0_ag2_f_02_1_1476631_1491437.wav,ROC_se0_ag2_f_02_1,32,Female,5,like you know you see,like you know you see,0,like you know you see,0,like you know you see,0,like you know you see,0,like you know you,0.2
+ROC_se0_ag2_f_02_1_2113403_2144994.wav,ROC_se0_ag2_f_02_1,32,Female,6,i was like you need to,i was like you need to,0,i was like you need to,0,i was like you need to,0,i was like you need to,0,i was like do you need,0.333333333
+ROC_se0_ag2_f_02_1_2592582_2614880.wav,ROC_se0_ag2_f_02_1,32,Female,5,its like i dont know,its like i dont know,0,its like i dont know,0,its like i dont know,0,its like i dont know,0,its like i dont know,0
+ROC_se0_ag2_f_02_1_2831510_2873063.wav,ROC_se0_ag2_f_02_1,32,Female,5,and he was like oh,and he was like,0.2,he was like,0.4,and he was like oh,0,and he was like oh,0,and he was,0.4
+ROC_se0_ag2_f_02_1_2989103_3022527.wav,ROC_se0_ag2_f_02_1,32,Female,5,and she said she didnt,and she said she didnt,0,and she said she didnt,0,and she said she didnt,0,and she said she didnt,0,and she said she didnt,0
+ROC_se0_ag2_f_03_1_98023_130140.wav,ROC_se0_ag2_f_03_1,39,Female,5,i dont know if i,i dont know if i,0,i think the older i,0.6,i dont,0.6,i dont know if i,0,i dont know if i,0
+ROC_se0_ag2_f_03_1_211669_223270.wav,ROC_se0_ag2_f_03_1,39,Female,5,and now that i see,and now that i see,0,and now that i see,0,and now that i see,0,and now that i see,0,and now that i see,0
+ROC_se0_ag2_f_03_1_1665857_1707023.wav,ROC_se0_ag2_f_03_1,39,Female,5,to them and i think,to them and i think,0,to them and i think,0,to them and i think,0,to them and i think,0,to them and i think,0
+ROC_se0_ag2_f_03_1_2168289_2192914.wav,ROC_se0_ag2_f_03_1,39,Female,5,and so i think that,and so i think that,0,and so i think that,0,and so i think that,0,and so i think that,0,and so i think that,0
+ROC_se0_ag2_f_04_1_357038_401875.wav,ROC_se0_ag2_f_04_1,43,Female,5,a couple of times and,a couple of times and,0,a couple of times and,0,a couple of times and,0,a couple of times and,0,a couple times and,0.2
+ROC_se0_ag2_f_04_1_605816_643702.wav,ROC_se0_ag2_f_04_1,43,Female,5,and i was like oh,i was,0.6,i was,0.6,and i was like,0.2,and i was like,0.2,and i was like,0.2
+ROC_se0_ag2_f_04_1_792507_811940.wav,ROC_se0_ag2_f_04_1,43,Female,5,and so i did that,and so i did that,0,and so i did that,0,and so i did that,0,and so i did that,0,and so i did that,0
+ROC_se0_ag2_f_04_1_881915_906432.wav,ROC_se0_ag2_f_04_1,43,Female,5,a year and then i,and then i,0.4,and then,0.6,and then,0.6,and then i,0.4,and then,0.6
+ROC_se0_ag3_f_01_1_858762_888161.wav,ROC_se0_ag3_f_01_1,52,Female,5,i dont know they dont,i dont know they dont,0,i dont know they dont,0,i dont know they dont,0,i dont know i dont,0.2,i dont know they dont,0
+ROC_se0_ag3_f_02_1_1525881_1530958.wav,ROC_se0_ag3_f_02_1,80,Female,5,didnt think anything of it,didnt think anything of it,0,didnt think anything of it,0,didnt think anything of it,0,didnt think anything of it,0,didnt think anything of it,0
+ROC_se0_ag3_f_02_1_1615257_1622185.wav,ROC_se0_ag3_f_02_1,80,Female,5,and thats the way we,and thats the way we,0,the way we,0.4,and thats the way we,0,the way we,0.4,and thats the way we,0
